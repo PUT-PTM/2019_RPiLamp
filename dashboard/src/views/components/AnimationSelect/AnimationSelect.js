@@ -15,7 +15,7 @@ export default class TurnLight extends Component {
 
   sendState = () => {
     // const { selectedAnimation } = this.state;
-    // return fetch(`set?switch-light=${selectedAnimation}`);
+    // return fetch(`set?selected-animation=${selectedAnimation}`);
   };
 
   render() {

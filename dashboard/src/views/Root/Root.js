@@ -9,13 +9,11 @@ import {
 } from '@material-ui/core/styles';
 import TurnLight from '../components/TurnLight/TurnLight';
 import AnimationSelect from '../components/AnimationSelect/AnimationSelect';
+import ColorSelect from '../components/ColorSelect/ColorSelect';
 
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
-    primary: {
-      main: '#fff',
-    },
     typography: {
       useNextVariants: true,
     },
@@ -47,6 +45,11 @@ function App(props) {
           <Grid item md={4}>
             <Paper className={classes.paper}>
               <AnimationSelect />
+            </Paper>
+          </Grid>
+          <Grid item md={4}>
+            <Paper className={classes.paper}>
+              <ColorSelect />
             </Paper>
           </Grid>
         </Grid>
