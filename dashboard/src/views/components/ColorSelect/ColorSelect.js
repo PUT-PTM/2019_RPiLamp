@@ -21,6 +21,7 @@ export default class TurnLight extends Component {
     return (
       <>
         <CirclePicker
+          width="100%"
           color={color}
           onChangeComplete={this.handleChangeComplete}
         />
