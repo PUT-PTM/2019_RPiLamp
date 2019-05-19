@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
+  typography: {
+    alignSelf: 'flex-start',
+    marginTop: 20,
+  },
   slider: {
     padding: '22px 0px',
   },
@@ -30,7 +34,7 @@ class Brightness extends Component {
 
     return (
       <>
-        <Typography id="brightness" align="left">
+        <Typography id="brightness" className={classes.typography}>
           Brightness
         </Typography>
         <Slider
