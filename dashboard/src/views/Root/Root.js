@@ -10,6 +10,7 @@ import {
 import TurnLight from '../components/TurnLight/TurnLight';
 import AnimationSelect from '../components/AnimationSelect/AnimationSelect';
 import ColorSelect from '../components/ColorSelect/ColorSelect';
+import Brightness from '../components/Brigthness/Brightness';
 
 const theme = createMuiTheme({
   palette: {
@@ -50,6 +51,7 @@ function App(props) {
           <Grid item md={4}>
             <Paper className={classes.paper}>
               <ColorSelect />
+              <Brightness />
             </Paper>
           </Grid>
         </Grid>
