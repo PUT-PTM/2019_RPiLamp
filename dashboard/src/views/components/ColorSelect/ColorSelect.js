@@ -7,12 +7,11 @@ export default class TurnLight extends Component {
   };
 
   handleChangeComplete = color => {
-    this.setState({ color: color.hex }, this.sendState());
+    this.setState({ color: color.hex }, this.sendState(color));
   };
 
-  sendState = () => {
-    const { color } = this.state;
-    return fetch(`set?main-color=${color}`);
+  sendState = color => {
+    return fetch(`set?main-color=${color.hex}`);
   };
 
   render() {
