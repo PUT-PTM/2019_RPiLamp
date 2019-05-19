@@ -1,4 +1,4 @@
-import { SliderPicker } from 'react-color';
+import { CirclePicker } from 'react-color';
 import React, { Component } from 'react';
 
 export default class TurnLight extends Component {
@@ -6,7 +6,7 @@ export default class TurnLight extends Component {
     color: '',
   };
 
-  handleChange = color => {
+  handleChangeComplete = color => {
     this.setState({ color: color.hex }, this.sendState());
   };
 
@@ -16,9 +16,14 @@ export default class TurnLight extends Component {
   };
 
   render() {
+    const { color } = this.state;
+
     return (
       <>
-        <SliderPicker />
+        <CirclePicker
+          color={color}
+          onChangeComplete={this.handleChangeComplete}
+        />
       </>
     );
   }
