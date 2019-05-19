@@ -18,7 +18,7 @@ export default class TurnLight extends Component {
   render() {
     return (
       <>
-        <SliderPicker />;
+        <SliderPicker />
       </>
     );
   }
