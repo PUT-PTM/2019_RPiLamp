@@ -28,6 +28,11 @@ const styles = () => ({
   paper: {
     padding: 25,
     textAlign: 'center',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
