@@ -9,8 +9,7 @@ export default class TurnLight extends Component {
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked }, () => {
       const { isChecked } = this.state;
-      console.log(process.env);
-      return fetch(`${process.env.API_URL}set?turn=${isChecked}`, {
+      return fetch(`http://192.168.0.123/set?turn=${isChecked}`, {
         mode: 'no-cors',
       });
     });
