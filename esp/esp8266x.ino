@@ -189,7 +189,7 @@ void srv_handle_set()
             }
         }
 
-        if (server.argName(i) == "m")
+        if (server.argName(i) == "animation")
         {
             uint8_t tmp = (uint8_t)strtol(server.arg(i).c_str(), NULL, 10);
             ws2812fx.setMode(tmp % ws2812fx.getModeCount());
