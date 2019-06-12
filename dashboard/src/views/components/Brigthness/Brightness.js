@@ -16,7 +16,7 @@ const styles = {
 
 class Brightness extends Component {
   state = {
-    brightness: 0,
+    brightness: 70,
   };
 
   handleChange = (event, value) => {
