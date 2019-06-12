@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 export default class TurnLight extends Component {
   state = {
-    isChecked: false,
+    isChecked: true,
   };
 
   handleChange = name => event => {
