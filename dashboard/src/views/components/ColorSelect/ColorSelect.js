@@ -10,7 +10,7 @@ export default class TurnLight extends Component {
     const colorHex = color.hex;
     this.setState({ color: colorHex }, () => {
       const trueColor = colorHex.replace('#', '');
-      return fetch(`http://192.168.0.123/set?c=${trueColor}`, {
+      return fetch(`http://192.168.0.123/set?color=${trueColor}`, {
         mode: 'no-cors',
       });
     });
