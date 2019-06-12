@@ -3,9 +3,6 @@
 #include <WS2812FX.h>
 #include <Adafruit_NeoPixel.h>
 
-extern const char index_html[];
-extern const char main_js[];
-
 #define WIFI_SSID "TP-LINK_1B88"
 #define WIFI_PASSWORD "s1e2b3a4"
 
@@ -16,7 +13,6 @@ IPAddress gateway(192, 168, 0, 1);
 IPAddress subnet(255, 255, 255, 0);
 #endif
 
-// QUICKFIX...See https://github.com/esp8266/Arduino/issues/263
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
@@ -26,8 +22,8 @@ IPAddress subnet(255, 255, 255, 0);
 #define WIFI_TIMEOUT 30000 // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
 #define HTTP_PORT 80
 
-#define DEFAULT_COLOR 0xFF5900
-#define DEFAULT_BRIGHTNESS 255
+#define DEFAULT_COLOR 0x2196f3
+#define DEFAULT_BRIGHTNESS 190
 #define DEFAULT_SPEED 1000
 #define DEFAULT_MODE FX_MODE_STATIC
 
@@ -197,8 +193,6 @@ void srv_handle_set()
         {
             uint8_t tmp = (uint8_t)strtol(server.arg(i).c_str(), NULL, 10);
             ws2812fx.setMode(tmp % ws2812fx.getModeCount());
-            Serial.print("mode is ");
-            Serial.println(ws2812fx.getModeName(ws2812fx.getMode()));
         }
     }
     server.send(200, "text/plain", "OK");
