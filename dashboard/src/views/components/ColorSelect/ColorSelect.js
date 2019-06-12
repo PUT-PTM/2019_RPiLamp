@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 export default class TurnLight extends Component {
   state = {
-    color: '',
+    color: '#2196f3',
   };
 
   handleChangeComplete = color => {
