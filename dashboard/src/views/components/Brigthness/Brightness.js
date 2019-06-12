@@ -16,7 +16,7 @@ const styles = {
 
 class Brightness extends Component {
   state = {
-    brightness: 70,
+    brightness: 191,
   };
 
   handleChange = (event, value) => {
@@ -44,6 +44,7 @@ class Brightness extends Component {
         <Slider
           classes={{ container: classes.slider }}
           aria-labelledby="brightness"
+          max={255}
           value={brightness}
           onChange={this.handleChange}
         />
