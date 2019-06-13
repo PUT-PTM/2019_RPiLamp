@@ -3,13 +3,13 @@
 #include <WS2812FX.h>
 #include <Adafruit_NeoPixel.h>
 
-#define WIFI_SSID "TP-LINK_1B88"
-#define WIFI_PASSWORD "s1e2b3a4"
+#define WIFI_SSID "rpi"
+#define WIFI_PASSWORD "seba1234"
 
 #define STATIC_IP // uncomment for static IP, set IP below
 #ifdef STATIC_IP
-IPAddress ip(192, 168, 0, 123);
-IPAddress gateway(192, 168, 0, 1);
+IPAddress ip(192, 168, 1, 123);
+IPAddress gateway(192, 168, 1, 1);
 IPAddress subnet(255, 255, 255, 0);
 #endif
 
