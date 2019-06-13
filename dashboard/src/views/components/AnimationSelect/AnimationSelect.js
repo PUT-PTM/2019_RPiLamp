@@ -13,7 +13,7 @@ export default class TurnLight extends Component {
   handleChange = event => {
     const { value } = event.target;
     this.setState({ selectedAnimation: value }, () => {
-      return fetch(`http://192.168.0.123/set?animation=${value}`, {
+      return fetch(`http://192.168.1.123/set?animation=${value}`, {
         mode: 'no-cors',
       });
     });

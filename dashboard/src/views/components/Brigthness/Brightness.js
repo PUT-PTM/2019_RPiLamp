@@ -21,7 +21,7 @@ class Brightness extends Component {
 
   handleChange = (event, value) => {
     this.setState({ brightness: value }, () => {
-      return fetch(`http://192.168.0.123/set?brightness=${value}`, {
+      return fetch(`http://192.168.1.123/set?brightness=${value}`, {
         mode: 'no-cors',
       });
     });
