@@ -9,7 +9,7 @@ RPiLamp is an university project of LED lamp made by Sebastian Siejek and Dawid 
 + Setup address ip in all devices.
 + Connect esp, raspberry and device for controling leds, this can be smartphone or laptop  to the same network.
 + When all devcies were conected to WiFi network enter 'Raspberry address ip/dashboard' in browser
-+ Use sterning panel for change colors, turn on and off leds and setup animations. 
++ Use control panel for change colors, turn on and off leds and setup animations. 
 
 ### Hardware
 + RaspberryPi
