@@ -3,10 +3,10 @@
 #include <WS2812FX.h>
 #include <Adafruit_NeoPixel.h>
 
-#define WIFI_SSID "rpi"
-#define WIFI_PASSWORD "seba1234"
+#define WIFI_SSID "WIFI_SETTINGS"
+#define WIFI_PASSWORD "PASSWORD"
 
-#define STATIC_IP // uncomment for static IP, set IP below
+//#define STATIC_IP // uncomment for static IP, set IP below
 #ifdef STATIC_IP
 IPAddress ip(192, 168, 1, 123);
 IPAddress gateway(192, 168, 1, 1);
@@ -16,7 +16,7 @@ IPAddress subnet(255, 255, 255, 0);
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
-#define LED_PIN 2 // 0 = GPIO0, 2=GPIO2
+#define LED_PIN 2 // 0 = GPIO0, 2 = GPIO2
 #define LED_COUNT 24
 
 #define WIFI_TIMEOUT 30000 // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
@@ -30,7 +30,7 @@ IPAddress subnet(255, 255, 255, 0);
 unsigned long auto_last_change = 0;
 unsigned long last_wifi_check_time = 0;
 String modes = "";
-uint8_t myModes[] = {}; // *** optionally create a custom list of effect/mode numbers
+uint8_t myModes[] = {};
 boolean auto_cycle = false;
 
 WS2812FX ws2812fx = WS2812FX(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
@@ -41,28 +41,17 @@ void setup()
     Serial.begin(115200);
     Serial.println();
     Serial.println();
-    Serial.println("Starting...");
-
     modes.reserve(5000);
-
-    Serial.println("WS2812FX setup");
     ws2812fx.init();
     ws2812fx.setMode(DEFAULT_MODE);
     ws2812fx.setColor(DEFAULT_COLOR);
     ws2812fx.setSpeed(DEFAULT_SPEED);
     ws2812fx.setBrightness(DEFAULT_BRIGHTNESS);
     ws2812fx.start();
-
-    Serial.println("Wifi setup");
     wifi_setup();
-
-    Serial.println("HTTP server setup");
     server.on("/modes", srv_handle_modes);
     server.on("/set", srv_handle_set);
     server.begin();
-    Serial.println("HTTP server started.");
-
-    Serial.println("ready!");
 }
 
 void loop()
@@ -88,10 +77,10 @@ void loop()
     }
 
     if (auto_cycle && (now - auto_last_change > 10000))
-    { // cycle effect mode every 10 seconds
+    { 
         uint8_t next_mode = (ws2812fx.getMode() + 1) % ws2812fx.getModeCount();
         if (sizeof(myModes) > 0)
-        { // if custom list of modes exists
+        { 
             for (uint8_t i = 0; i < sizeof(myModes); i++)
             {
                 if (myModes[i] == ws2812fx.getMode())
@@ -107,10 +96,6 @@ void loop()
         auto_last_change = now;
     }
 }
-
-/*
- * Connect to WiFi. If no connection is made within WIFI_TIMEOUT, ESP gets resettet.
- */
 void wifi_setup()
 {
     Serial.println();
