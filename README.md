@@ -1,29 +1,37 @@
 # RPiLamp
 
-### Overview
-Project of LED lamp controlled by a web server set on raspberry and led's connected to esp.
-### Description
-RPiLamp is an university project of LED lamp made by Sebastian Siejek and Dawid Smalc - student's of Poznań University of technology. Supervisor: Tomasz Mańkowski.
-### How to use
+###Overview
++ RPiLamp is project for control leds via raspberry and esp
 
-+ Setup address ip in all devices.
-+ Connect esp, raspberry and device for controling leds, this can be smartphone or laptop  to the same network.
-+ When all devcies were conected to WiFi network enter 'Raspberry address ip/dashboard' in browser
-+ Use control panel for change colors, turn on and off leds and setup animations. 
+###Description
++ In our project we use Raspberry PI 3+ and ESP8266 NodeMCUv2. On Raspberry we installed apache server and we placed there website for control leds.
 
-### Hardware
-+ RaspberryPi
-+ ESP8266
-+ 3x Led rings WS2812b
+###Tools
++ Arduino app 1.8.9
++ CREATE REACT APP
 
+###How to run
++ We shoud connect raspberry and esp to the same network.
 
-### Software
-+ Arduino app 1.8.9 
-+ Apache server on Raspberry
-### External libraries used
+###How to compile
++ We need load esp/esp8266x.ino add additional libraries like Adafruit Neopixels and WS2812 FX Library for Arduino and ESP8266 to Arduino.
++ For run dashboard we firstly need insall core packages and compile files. After compile we shoud change path in files from absolute "/" to relative "./" and send /build directory to raspberry server.
 
+###Future improvements
++ Add Cron to planning turn on/off the leds
++ Separate core files to our library
+
+###Attributions
 + [Adafruit Neopixels](https://github.com/adafruit/Adafruit_NeoPixel)
 + [WS2812 FX Library for Arduino and ESP8266](https://github.com/kitesurfer1404/WS2812FX)
 
-### Authors
+###License
+The MIT License (MIT)
+
+###Credits
 [Sebastian Siejek](http://kontakt@sebastiansiejek.pl) & [Dawid Smalc](mailto:dawid.smalc@gmail.com)
+
+###Dodać dopisek:
+The project was conducted during the Microprocessor Lab course held by the Institute of Control and Information Engineering, Poznan University of Technology.
+
+###Supervisor: Marek Kraft/Michał Fularz/Tomasz Mańkowski/Adam Bondyra
