@@ -1,6 +1,4 @@
 # RPiLamp
-### Authors
-[Sebastian Siejek](http://kontakt@sebastiansiejek.pl) & [Dawid Smalc](mailto:dawid.smalc@gmail.com)
 
 ### Overview
 Project of LED lamp controlled by a web server set on raspberry and led's connected to esp.
@@ -17,5 +15,15 @@ RPiLamp is an university project of LED lamp made by Sebastian Siejek and Dawid 
 + RaspberryPi
 + ESP8266
 + 3x Led rings WS2812b
+
+
+### Software
++ Arduino app 1.8.9 
++ Apache server on Raspberry
+### External libraries used
+
++ [Adafruit Neopixels](https://github.com/adafruit/Adafruit_NeoPixel)
++ [WS2812 FX Library for Arduino and ESP8266](https://github.com/kitesurfer1404/WS2812FX)
+
 ### Authors
 [Sebastian Siejek](http://kontakt@sebastiansiejek.pl) & [Dawid Smalc](mailto:dawid.smalc@gmail.com)
